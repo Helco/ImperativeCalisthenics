@@ -4,6 +4,6 @@
 
 struct Board {
     std::vector<Cell> cells;
-    unsigned int width;
+    int width;
 };
 void print(const Board& board);

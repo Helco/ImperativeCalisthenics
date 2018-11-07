@@ -4,11 +4,14 @@
 
 Board random_board()
 {
-    Board board;
-    board.width = 3;
+    Board board { std::vector<Cell>(), 3 };
     std::fill_n(std::back_inserter(board.cells), 9, Cell { CellStatus::Covered });
     const auto& cells = board.cells;
     std::vector<int> bomb_indices(cells.size());
-    std::shuffle(std::begin(bomb_indices), std::end(bomb_indices), std::mt19937(std::random_device()));
+    std::iota(std::begin(bomb_indices), std::end(bomb_indices), 0);
+    std::shuffle(std::begin(bomb_indices), std::end(bomb_indices), std::random_device());
+    bomb_indices.resize(2);
+    for (int bomb_index : bomb_indices)
+        board.cells[bomb_index] = Cell { CellStatus::CoveredAndBomb };
     return board;
 }
