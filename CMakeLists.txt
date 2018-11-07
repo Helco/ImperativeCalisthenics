@@ -6,7 +6,7 @@ project(imperative_calisthenics)
 ###################################################################
 
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     link_libraries(m)
@@ -36,6 +36,11 @@ endfunction(assign_source_group)
 
 set(sources_imperative_calisthenics
     src/main.cpp
+    src/Bombs.cpp
+    src/Cells.cpp
+    src/Board.cpp
+    src/BoardGenerator.cpp
+    src/BoardReveal.cpp
 )
 
 add_executable(imperative_calisthenics
