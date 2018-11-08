@@ -4,8 +4,8 @@
 
 Board random_board()
 {
-    Board board { std::vector<Cell>(), 3 };
-    std::fill_n(std::back_inserter(board.cells), 9, Cell { CellStatus::Covered });
+    Board board { std::vector<Cell>(), 9 };
+    std::fill_n(std::back_inserter(board.cells), 81, Cell { CellStatus::Covered });
     const auto& cells = board.cells;
     std::vector<int> bomb_indices(cells.size());
     std::iota(std::begin(bomb_indices), std::end(bomb_indices), 0);

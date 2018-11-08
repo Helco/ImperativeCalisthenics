@@ -2,5 +2,6 @@
 #include "Board.h"
 #include "Position.h"
 
-std::vector<Cell> moore_neighborhood(const Board& board, Position position);
+bool is_bomb(const Board& board, Position position);
+std::vector<Position> moore_neighborhood(const Board& board, Position position);
 int count_bombs(const Board& board, Position position);
